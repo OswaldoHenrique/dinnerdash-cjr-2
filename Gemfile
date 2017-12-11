@@ -28,6 +28,9 @@ gem 'bootstrap', '~> 4.0.0.beta2.1'
 # the font-awesome font bundled as an asset for the rails asset pipeline
 gem 'font-awesome-rails'
 
+# Devise gem
+gem 'devise'
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
