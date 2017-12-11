@@ -2,20 +2,28 @@
 
 - Projeto Dinner Dash a ser passado no Processo Trainee da CJR 2017/02
 
-## Setup
+### Setup
 
-* Instalar as dependências com o bundle
+Instalar as dependências com o bundle
 
-> `bundle install`
+```
+bundle install
+```
 
-* Criar o BD
+Criar o BD
 
-> `rails db:create`
+```
+rails db:create
+```
 
-* Fazer as migrações
+Fazer as migrações
 
-> `rails db:migrate`
+```
+rails db:migrate
+```
 
-* Rodar o server
+Rodar o server
 
-> `rails server`
+```
+rails server
+```
