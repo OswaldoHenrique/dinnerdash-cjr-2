@@ -1,0 +1,53 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+header{
+    position: relative;
+    min-height: 80vh;
+    width: 100vw;
+}
+
+.header-bg{
+    background-image: image-url("jay-wennington-2065.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    filter: brightness(50%);
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+}
+
+.logo {
+    filter: none;
+    font-family: 'Amaranth', sans-serif;
+    font-size: 28px;
+    color: #fff;
+    float: left;
+}
+
+nav {
+    filter: brightness(100%);
+    width: 100%;
+    min-height: 10%;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    z-index: 10;
+    padding: 0 5vw;
+}
+
+nav ul {
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 1vw 4vw;
+    overflow: hidden;
+}
+
+nav ul li {
+    filter: brightness(100%);
+    float: right;
+}
