@@ -24,6 +24,16 @@
       <h1 class="welcome">
 	  Bem-vindo, <%= current_user.name %>
       </h1>
+      <h6 class="welcome">
+	  Monte seu prato, escolha sua salada,
+	  molho, prato principal, guarnição e bebida
+      </h6>
+  <% else %>
+      <h1 class="welcome">
+	  Monte o seu prato
+      </h1>
+      <h6 class="welcome">
+	  Escolha sua salada, molho, prato principal, guarnição e bebida
+      </h6>
   <% end -%>
-
 </header>
