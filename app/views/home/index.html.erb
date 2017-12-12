@@ -5,38 +5,40 @@
   <div class="header-bg">
   </div>
   <nav>
-    <span class="logo">dinnerdash</span>
+    <span class="logo">
+      <%= link_to "dinnerdash", root_path %>
+    </span>
     <ul>
-	<%- if user_signed_in? %>
-	    <li>
-		<%= link_to "sair", destroy_session_path(:user),
-		method: :delete,
-		data: { confirm: 'Deseja sair?' } %><br />
-	    </li>
-	<% else %>
-	    <li>
-		<%= link_to "cadastro", new_registration_path(:user) %><br />
-	    </li>
-	    <li>
-		<%= link_to "entrar", new_session_path(:user) %><br />
-	    </li>
-	<% end -%>
+      <%- if user_signed_in? %>
+        <li>
+          <%= link_to "sair", destroy_session_path(:user),
+          method: :delete,
+          data: { confirm: 'Deseja sair?' } %><br />
+        </li>
+      <% else %>
+        <li>
+          <%= link_to "cadastro", new_registration_path(:user) %><br />
+        </li>
+        <li>
+          <%= link_to "entrar", new_session_path(:user) %><br />
+        </li>
+      <% end -%>
     </ul>
   </nav>
   <%- if user_signed_in? %>
-      <h1 class="welcome">
-	  Bem-vindo, <%= current_user.name %>
-      </h1>
-      <h6 class="welcome">
-	  Monte seu prato, escolha sua salada,
-	  molho, prato principal, guarnição e bebida
-      </h6>
+    <h1 class="welcome">
+      Bem-vindo, <%= current_user.name %>
+    </h1>
+    <h6 class="welcome">
+      Monte seu prato, escolha sua salada,
+      molho, prato principal, guarnição e bebida
+    </h6>
   <% else %>
-      <h1 class="welcome">
-	  Monte o seu prato
-      </h1>
-      <h6 class="welcome">
-	  Escolha sua salada, molho, prato principal, guarnição e bebida
-      </h6>
+    <h1 class="welcome">
+      Monte o seu prato
+    </h1>
+    <h6 class="welcome">
+      Escolha sua salada, molho, prato principal, guarnição e bebida
+    </h6>
   <% end -%>
 </header>

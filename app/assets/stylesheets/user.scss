@@ -1,7 +1,22 @@
-
 .logo {
-    font-family: 'Amaranth', sans-serif;
     margin-top: 3vh;
+}
+.logo a{
+    font-family: 'Amaranth', sans-serif;
+    font-size: 48px;
+    color: #333333;
+    opacity: 0.85;
+}
+
+.logo a:link, .logo nav a:visited {
+    color: #333333;
+    opacity: 0.85;
+}
+
+.logo a:hover {
+    text-decoration: none;
+    color: #333333;
+    opacity: 0.85;
 }
 
 body {
@@ -10,7 +25,7 @@ body {
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
 }
 
@@ -19,21 +34,25 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 35vw;
+    width: 35%;
     min-height: 100vh;
     float: right;
     padding: 0 4vw;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 form {
-    margin-top: 4vh;
-    padding-bottom: 3vh;
+    margin-top: 3vh;
+    padding-bottom: 5vh;
     border-bottom: 1px solid rgba(0, 0, 0, .2);;
 }
 
 .field {
     margin: 2vh 0;
+    color: #333333;
+    opacity: 0.75;
+    font-size: 16px;
 }
 
 input {
@@ -56,11 +75,14 @@ input#user_remember_me {
 }
 
 .links {
-    padding-top: 4vh;
+    padding-top: 5vh;
 }
 
 .links h6{
     margin-bottom: 1em;
+    color: #333333;
+    opacity: 0.75;
+    font-size: 16px;
 }
 
 .links a:link, .links a:visited {
@@ -76,8 +98,4 @@ input#user_remember_me {
 
 .links a:hover {
     text-decoration: none;
-}
-
-div#error_explanation h2 {
-    font-size: 1em;
 }
