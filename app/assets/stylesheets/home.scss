@@ -29,7 +29,6 @@ header{
 }
 
 nav {
-    filter: brightness(100%);
     width: 100%;
     min-height: 10%;
     display: flex;
@@ -48,6 +47,14 @@ nav ul {
 }
 
 nav ul li {
-    filter: brightness(100%);
+    margin: 0 4px;
     float: right;
+}
+
+.welcome {
+    position: absolute;
+    bottom: 8px;
+    left: 5vw;
+    z-index: 10;
+    color: white;
 }
