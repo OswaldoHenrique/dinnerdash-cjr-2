@@ -1,6 +1,7 @@
 
 .logo {
     font-family: 'Amaranth', sans-serif;
+    margin-top: 3vh;
 }
 
 body {
@@ -13,13 +14,26 @@ body {
     height: 100vh;
 }
 
-.container-form {
+.side {
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 35vw;
-    height: 100vh;
+    min-height: 100vh;
     float: right;
-    padding: 10vh 4vw;
+    padding: 0 4vw;
     overflow-y: auto;
+}
+
+form {
+    margin-top: 4vh;
+    padding-bottom: 3vh;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);;
+}
+
+.field {
+    margin: 2vh 0;
 }
 
 input {
@@ -31,10 +45,35 @@ input#user_remember_me {
 }
 
 .actions input {
-    background-color: green;
     color: white;
+    background-color: ForestGreen;
+    border-color: ForestGreen;
     border-radius: 5%;
+    padding: 0;
+    margin: 1vh 0;
     width: 100%;
     height: 2em;
-    margin: 1vh 0;
+}
+
+.links {
+    padding-top: 4vh;
+}
+
+.links h6{
+    margin-bottom: 1em;
+}
+
+.links a:link, .links a:visited {
+    display: inline-flex;
+    justify-content: center;
+    color: ForestGreen;
+    border: 2px solid ForestGreen;
+    border-radius: 5%;
+    width: 100%;
+    margin-bottom: 1em;
+    padding: 0.25em 0;
+}
+
+.links a:hover {
+    text-decoration: none;
 }
