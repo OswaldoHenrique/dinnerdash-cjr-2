@@ -7,17 +7,20 @@
   <nav>
     <span class="logo">dinnerdash</span>
     <ul>
-	<li>
-	    <%= link_to "Sair", destroy_session_path(:user),
-	    method: :delete,
-	    data: { confirm: 'Deseja sair?' } %><br />
-	</li>
-	<li>
-	    <%= link_to "Log in", new_session_path(:user) %><br />
-	</li>
-	<li>
-	    <%= link_to "Sign up", new_registration_path(:user) %><br />
-	</li>
+	<%- if user_signed_in? %>
+	    <li>
+		<%= link_to "sair", destroy_session_path(:user),
+		method: :delete,
+		data: { confirm: 'Deseja sair?' } %><br />
+	    </li>
+	<% else %>
+	    <li>
+		<%= link_to "cadastro", new_registration_path(:user) %><br />
+	    </li>
+	    <li>
+		<%= link_to "entrar", new_session_path(:user) %><br />
+	    </li>
+	<% end -%>
     </ul>
   </nav>
   <%- if user_signed_in? %>
