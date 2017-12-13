@@ -13,13 +13,7 @@ bundle install
 Criar o BD
 
 ```
-rails db:create
-```
-
-Fazer as migrações
-
-```
-rails db:migrate
+rails db:setup
 ```
 
 Rodar o server
