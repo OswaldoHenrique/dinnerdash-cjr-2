@@ -1,0 +1,95 @@
+header{
+    position: relative;
+    min-height: 80vh;
+    width: 100vw;
+    background-image: image-url("jay-wennington-2065.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    z-index: 9;
+}
+
+.logo {
+    filter: none;
+    font-family: 'Amaranth', sans-serif;
+    font-size: 28px;
+    color: #fff;
+    float: left;
+}
+
+nav {
+    width: 100%;
+    min-height: 10%;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+    padding: 0 5vw;
+}
+
+nav ul {
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0 4vw;
+    overflow: hidden;
+}
+
+nav ul li {
+    margin: 0 12px;
+    float: right;
+}
+
+nav a:link, nav a:visited {
+    color: white;
+}
+
+nav a:hover {
+    text-decoration: none;
+}
+
+.welcome {
+    position: absolute;
+    bottom: 5%;
+    left: 5vw;
+    z-index: 10;
+    color: white;
+}
+
+.welcome h1{
+    font-size: 72px;
+}
+
+.welcome h6{
+    font-size: 28px;
+}
+
+form {
+    display: block;
+    padding: 0 5vw;
+}
+
+.field {
+    display: inline-block;
+    width: 40vw;
+    margin: 2vh 0;
+    margin-right: 2vw;
+    color: #333333;
+    opacity: 0.75;
+    font-size: 16px;
+}
+
+input {
+    width: 40vw;
+}
+
+.actions input, form.button_to input{
+    color: white;
+    background-color: ForestGreen;
+    border-color: ForestGreen;
+    border-radius: 5%;
+    padding: 0;
+    margin: 2vh 0;
+    width: 25vw;
+    height: 2em;
+}

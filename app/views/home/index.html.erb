@@ -15,6 +15,9 @@
           method: :delete,
           data: { confirm: 'Deseja sair?' } %><br />
         </li>
+        <li>
+          <%= link_to "perfil", edit_registration_path(:user) %><br />
+        </li>
       <% else %>
         <li>
           <%= link_to "cadastro", new_registration_path(:user) %><br />
