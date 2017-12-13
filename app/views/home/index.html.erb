@@ -1,31 +1,10 @@
 <%= stylesheet_link_tag "home", media: "all", "data-turbolinks-track" => "reload" %>
+<%= stylesheet_link_tag "header", media: "all", "data-turbolinks-track" => "reload" %>
+
 <link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet">
 
 <header>
-  <nav>
-    <span class="logo">
-      <%= link_to "dinnerdash", root_path %>
-    </span>
-    <ul>
-      <%- if user_signed_in? %>
-        <li>
-          <%= link_to "sair", destroy_session_path(:user),
-          method: :delete,
-          data: { confirm: 'Deseja sair?' } %><br />
-        </li>
-        <li>
-          <%= link_to "perfil", edit_registration_path(:user) %><br />
-        </li>
-      <% else %>
-        <li>
-          <%= link_to "cadastro", new_registration_path(:user) %><br />
-        </li>
-        <li>
-          <%= link_to "entrar", new_session_path(:user) %><br />
-        </li>
-      <% end -%>
-    </ul>
-  </nav>
+  <%= render "shared/navbar" %>
   <%- if user_signed_in? %>
     <h1 class="welcome">
       Bem-vindo, <%= current_user.name %>
