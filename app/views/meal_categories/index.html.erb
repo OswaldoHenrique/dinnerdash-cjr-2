@@ -1,0 +1,18 @@
+<h1>Lista categorias</h1>
+
+<table>
+  <tr>
+    <th>Nome</th>
+  </tr>
+
+  <% @meal_categories.each do |category| %>
+    <tr>
+      <td><%= category.name %></td>
+      <td><%= link_to 'Mostrar', meal_category_path(category) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Home', home_index_path %>
+<br>
+<%= link_to 'Criar categoria', new_meal_category_path %>

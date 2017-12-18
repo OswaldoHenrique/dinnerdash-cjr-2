@@ -1,0 +1,4 @@
+<p>
+  <strong>Nome:</strong>
+  <%= @meal_category.name %>
+</p>
