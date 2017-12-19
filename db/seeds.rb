@@ -12,4 +12,4 @@ user = User.new(
                 :password              => "senhadoadmin",
                 :password_confirmation => "senhadoadmin"
                )
-user.save!
+user.save(validate: false)
