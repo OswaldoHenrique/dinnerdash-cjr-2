@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: oh21
+  api_key: '283892383468225'
+  api_secret: Om0bTWDy4O_z6jFR--Af8tvC1HA
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: oh21
+  api_key: '283892383468225'
+  api_secret: Om0bTWDy4O_z6jFR--Af8tvC1HA
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: oh21
+  api_key: '283892383468225'
+  api_secret: Om0bTWDy4O_z6jFR--Af8tvC1HA
+  enhance_image_tag: true
+  static_image_support: false
