@@ -1,0 +1,31 @@
+<p>---------------------------------------------<p>
+<p>
+  <strong>Nome:</strong>
+  <%= meal.name %>
+</p>
+
+<p>
+  <strong>Descrição:</strong>
+  <%= meal.description %>
+</p>
+
+<p>
+  <strong>Preço:</strong>
+  <%= meal.price %>
+</p>
+
+<%- if !meal.image.nil? %>
+  <p>
+    <strong>Imagem:</strong>
+    <%= cl_image_tag(meal.image, :crop => :fill, :width => 120, :height => 80) %>
+  </p>
+<% else %>
+  <p>
+    <strong>Sem Imagem</strong>
+  </p>
+<% end -%>
+
+<p>
+  <strong>Disponibilidade:</strong>
+  <%= meal.available %>
+</p>

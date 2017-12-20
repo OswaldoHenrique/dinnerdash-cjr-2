@@ -3,6 +3,15 @@
   <%= @meal_category.name %>
 </p>
 
+<%- if !@meal_category.meals.empty? %>
+  <p>---------------------------------------------<p>
+  <strong>Refeições</strong>
+  <%= render @meal_category.meals %>
+  <p>---------------------------------------------<p>
+<% end -%>
+
+<strong>Adicionar refeição:</strong>
+<%= render 'meals/form' %>
 
 <%= link_to 'Home', home_index_path %>
 <br>

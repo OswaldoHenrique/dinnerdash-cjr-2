@@ -1,0 +1,35 @@
+<%= cloudinary_js_config %>
+<script type = "text/javascript">
+ $(function() {
+   if($.fn.cloudinary_fileupload !== undefined) {
+     $("input.cloudinary-fileupload[type=file]").cloudinary_fileupload();
+     $('.cloudinary-fileupload').fileupload('option', 'replaceFileInput', false);
+   }
+ });
+</script>
+
+<%= form_with(model: [ @meal_category, @meal_category.meals.build ]) do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+  </p>
+  <p>
+    <%= form.label :price %><br>
+    <%= form.number_field :price, step: :any %>
+  </p>
+  <p>
+    <%= form.label :image %><br>
+    <%= cl_image_upload(:image, :crop => :fill, :width => 120, :height => 80) %>
+  </p>
+  <p>
+    <%= form.label :available %><br>
+    <%= form.check_box :available %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

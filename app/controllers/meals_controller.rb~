@@ -1,0 +1,12 @@
+class MealsController < ApplicationController
+  def create
+    @meal_category = MealCategory.find(params[:meal_category_id])
+    @meal = @meal_category.meals.create(meal_params)
+    redirect_to meal_category_path(@meal_category)
+  end
+
+  private
+    def meal_params
+      params.require(:meal).permit(:name, :description, :price, :image, :available)
+    end
+end
