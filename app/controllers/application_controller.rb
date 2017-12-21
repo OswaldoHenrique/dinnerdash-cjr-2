@@ -22,6 +22,7 @@ class ApplicationController < ActionController::Base
   def current_order
     @order = Order.new
     @order.status = 0
+    @order.price = 0
     @order.save
     session[:current_order_id] = @order.id
   end
