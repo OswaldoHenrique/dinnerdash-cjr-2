@@ -1,0 +1,23 @@
+
+<h1>Lista pratos</h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Status</th>
+  </tr>
+
+  <% @orders.each do |order| %>
+    <tr>
+      <td><%= order.id %></td>
+      <td><%= order.status %></td>
+      <td><%= link_to 'Mostrar', order_path(order) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Novo prato', new_order_path %>
+<br>
+<%= link_to 'Categorias', meal_categories_path %>
+<br>
+<%= link_to 'Home', home_index_path %>

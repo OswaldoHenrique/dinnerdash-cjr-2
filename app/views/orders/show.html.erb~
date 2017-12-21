@@ -1,0 +1,20 @@
+
+<p>
+  <strong>ID:</strong>
+  <%= @order.id %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @order.status %>
+</p>
+
+<h2>Meals</h2>
+<% @order.order_has_meals.each do |meal| %>
+  <p>
+    <strong>Nome:</strong>
+    <%= meal.name %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', orders_path %>

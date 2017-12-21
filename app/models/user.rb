@@ -6,4 +6,5 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :admin, inclusion: { in: [false] }
   validates :admin, exclusion: { in: [true, nil] }
+  has_many :orders
 end

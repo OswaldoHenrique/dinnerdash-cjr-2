@@ -1,0 +1,2 @@
+module OrderHasMealsHelper
+end

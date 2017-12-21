@@ -1,0 +1,11 @@
+
+<%= form_with(model: [ Order, Order.order_has_meals.build ]) do |form| %>
+  <p>
+    <%= form.label :quantity %><br>
+    <%= form.number_field :quantity %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

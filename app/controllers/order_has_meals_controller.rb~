@@ -1,0 +1,2 @@
+class OrderHasMealsController < ApplicationController
+end
