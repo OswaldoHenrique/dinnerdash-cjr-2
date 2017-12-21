@@ -1,0 +1,20 @@
+<p>
+  <strong>ID:</strong>
+  <%= order.id %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= order.status %>
+</p>
+
+<h2>Meals</h2>
+<% order.order_has_meals.each do |meal_order| %>
+  <p>
+    <strong>Meal | Order | Price | QTD</strong><br />
+    M <%= meal_order.meal_id %>
+    O <%= meal_order.order_id %>
+    P <%= meal_order.price %>
+    Q <%= meal_order.quantity %>
+  </p>
+<% end %>
