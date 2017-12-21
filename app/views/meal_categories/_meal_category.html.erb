@@ -1,11 +1,11 @@
-<p>
-  <strong>Nome:</strong>
-  <%= meal_category.name %>
-</p>
+<p id="category_header"><%= meal_category.name %></p>
 
-<%- if !meal_category.meals.empty? %>
-  <p>---------------------------------------------<p>
-    <strong>Refeições</strong>
-    <%= render meal_category.meals %>
-    <p>---------------------------------------------<p>
-<% end -%>
+<div class="meal_category">
+  <%- if !meal_category.meals.empty? %>
+    <div class="meal">
+      <%= render meal_category.meals %>
+    </div>
+  <% else %>
+    <p id="category_text"> Parece que não há nada aqui </p>
+  <% end -%>
+</div>

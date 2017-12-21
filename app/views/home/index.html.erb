@@ -27,8 +27,10 @@
   <%= content_tag :div, msg, :id => "flash" if msg.length > 0 %>
 <% end %>
 
-<%= render @meal_categories %>
-<%= render @order %>
+<div class="wrapper">
+  <%= render @meal_categories %>
+  <%= render @order %>
+</div>
 
 <%- if user_signed_in? %>
   <%= form_with model: @order do |form| %>

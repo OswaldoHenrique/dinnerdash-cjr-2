@@ -1,33 +1,37 @@
-<p>---------------------------------------------<p>
-<p>
-  <strong>Nome:</strong>
-  <%= meal.name %>
-</p>
-
-<p>
-  <strong>Descrição:</strong>
-  <%= meal.description %>
-</p>
-
-<p>
-  <strong>Preço:</strong>
-  <%= meal.price %>
-</p>
-
-<%- if !meal.image.nil? %>
+<div class="meal_params">
   <p>
-    <strong>Imagem:</strong>
-    <%= cl_image_tag(meal.image, :crop => :fill, :width => 120, :height => 80) %>
+    <strong>Nome:</strong>
+    <%= meal.name %>
   </p>
-<% else %>
+
   <p>
-    <strong>Sem Imagem</strong>
+    <strong>Descrição:</strong>
+    <%= meal.description %>
   </p>
-<% end -%>
 
-<p>
-  <strong>Disponibilidade:</strong>
-  <%= meal.available %>
-</p>
+  <p>
+    <strong>Preço unitário:</strong>
+    R$ <%= meal.price %>
+  </p>
 
-<%= render 'order_has_meals/form', meal_id: meal.id %>
+  <%- if !meal.image.nil? %>
+    <p>
+      <%= cl_image_tag(meal.image, :crop => :fill, :width => 120, :height => 80) %>
+    </p>
+  <% else %>
+    <p>
+      <br>
+      <strong>Sem</strong><br>
+      <strong>Imagem</strong>
+      <br>
+      <br />
+    </p>
+  <% end -%>
+
+  <p>
+    <strong>Disponibilidade:</strong>
+    <%= meal.available %>
+  </p>
+
+  <%= render 'order_has_meals/form', meal_id: meal.id %>
+</div>

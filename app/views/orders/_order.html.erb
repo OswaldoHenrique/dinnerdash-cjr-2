@@ -1,28 +1,33 @@
-<p>
-  <strong>ID:</strong>
-  <%= order.id %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= order.status %>
-</p>
-
-<p>
-  <strong>$$$:</strong>
-  <%= order.price %>
-</p>
-
-<h2>Meals</h2>
-<% order.order_has_meals.each do |meal_order| %>
+<div class="order header">
+  <p id="header"> Seu pedido </p>
   <p>
-    <strong>Meal | Order | Price | QTD</strong><br />
-    <%= Meal.find(meal_order.meal_id).name %>
-    <br>
-    <%= meal_order.order_id %>
-    <br>
-    <%= meal_order.price %>
-    <br>
-    <%= meal_order.quantity %>
+    <span>ID do pedido:</span>
+    <%= order.id %>
   </p>
-<% end %>
+  <p>
+    <span>Situação:</span>
+    <%= order.status %>
+  </p>
+</div>
+
+<div class="order items">
+  <% order.order_has_meals.each do |meal_order| %>
+    <p>
+      <br />
+      Nome: <%= Meal.find(meal_order.meal_id).name %>
+      <br>
+      Preço unitário: <%= Meal.find(meal_order.meal_id).price %>
+      <br>
+      Quantidade: <%= meal_order.quantity %>
+      <br>
+      Preço: <%= meal_order.price %>
+    </p>
+  <% end %>
+</div>
+
+<div class="order footer">
+  <p>
+    <strong>Preço total:</strong>
+    R$ <%= order.price %>
+  </p>
+</div>

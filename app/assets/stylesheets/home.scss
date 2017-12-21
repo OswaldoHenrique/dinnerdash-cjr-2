@@ -1,3 +1,51 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.wrapper {
+    padding: 0 5vw;
+}
+
+#category_header, #category_text {
+    margin: 3vh 0;
+}
+
+#category_header, #header {
+    color: #333333;
+    font-size: 28px;
+    opacity: 0.75;
+}
+
+.meal {
+    display: inline-flex;
+    flex-direction: row;
+    margin: 2vh 0;
+}
+
+.meal_category {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    margin: 2vh 0;
+}
+
+.meal_params {
+    display: block;
+    padding: 1vh 2vw;
+    border: 1px solid #3333;
+    margin-right: 2vw;
+}
+
+.order {
+    margin: 1vh 0;
+}
+
+.order.header {
+    border-bottom: 1px solid #3333;
+}
+
+.order.footer {
+    padding-top: 4vh;
+    padding-bottom: 1vh;
+    border-bottom: 1px solid #3333;
+    border-top: 1px solid #3333;
+}
