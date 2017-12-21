@@ -1,6 +1,7 @@
 <%- if OrderHasMeal.find_by(meal_id: meal_id, order_id: session[:current_order_id]) %>
   <%= form_with model: Order.find(session[:current_order_id]).order_has_meals.find_by(meal_id: meal_id),
-    url: order_order_has_meal_path(session[:current_order_id]) do |form| %>
+    url: order_order_has_meal_path(session[:current_order_id],
+                                   OrderHasMeal.find_by(meal_id: meal_id, order_id: session[:current_order_id]).id) do |form| %>
     <p>
       <%= meal_id %>
       <%= form.label :quantity %><br>

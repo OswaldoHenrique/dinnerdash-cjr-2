@@ -1,0 +1,11 @@
+<p>
+  <strong>Nome:</strong>
+  <%= @meal_category.name %>
+</p>
+
+<%- if !@meal_category.meals.empty? %>
+  <p>---------------------------------------------<p>
+    <strong>Refeições</strong>
+    <%= render @meal_category.meals %>
+    <p>---------------------------------------------<p>
+<% end -%>
