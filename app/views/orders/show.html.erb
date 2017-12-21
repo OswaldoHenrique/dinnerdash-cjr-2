@@ -8,6 +8,11 @@
   <%= @order.status %>
 </p>
 
+<p>
+  <strong>$$$:</strong>
+  <%= @order.price %>
+</p>
+
 <h2>Meals</h2>
 <% @order.order_has_meals.each do |meal_order| %>
   <p>
