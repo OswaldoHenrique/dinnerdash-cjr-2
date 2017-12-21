@@ -23,6 +23,10 @@
   <% end -%>
 </header>
 
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, :id => "flash" if msg.length > 0 %>
+<% end %>
+
 <%= render @meal_categories %>
 <%= render @order %>
 

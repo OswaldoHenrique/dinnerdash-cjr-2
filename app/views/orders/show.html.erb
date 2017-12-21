@@ -17,10 +17,13 @@
 <% @order.order_has_meals.each do |meal_order| %>
   <p>
     <strong>Meal | Order | Price | QTD</strong><br />
-    M <%= meal_order.meal_id %>
-    O <%= meal_order.order_id %>
-    P <%= meal_order.price %>
-    Q <%= meal_order.quantity %>
+    <%= Meal.find(meal_order.meal_id).name %>
+    <br>
+    <%= meal_order.order_id %>
+    <br>
+    <%= meal_order.price %>
+    <br>
+    <%= meal_order.quantity %>
   </p>
 <% end %>
 
