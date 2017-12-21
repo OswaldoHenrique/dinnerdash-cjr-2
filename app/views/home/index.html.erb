@@ -30,6 +30,22 @@
 <%= render @meal_categories %>
 <%= render @order %>
 
+<%- if user_signed_in? %>
+  <%= form_with model: @order do |form| %>
+    <%= form.hidden_field :status, value: 1 %>
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
+<% else %>
+  <%= link_to 'Entrar', new_session_path(:user) %>
+  <%= link_to 'Criar conta', new_registration_path(:user) %>
+<% end -%>
+
+<br>
+<br>
+<br>
+<p>----------PROVISORIO----------</p>
 <%= link_to 'Criar categoria', new_meal_category_path %>
 <br>
 <%= link_to 'Categorias', meal_categories_path %>
