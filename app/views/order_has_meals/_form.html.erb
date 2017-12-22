@@ -4,7 +4,7 @@
                                    OrderHasMeal.find_by(meal_id: meal_id, order_id: session[:current_order_id]).id) do |form| %>
     <p>
       <%= form.label "Quantidade" %><br>
-      <%= form.number_field :quantity %>
+      <%= form.number_field :quantity, min: 0 %>
     </p>
 
     <%= form.hidden_field :meal_id, value: meal_id %>
@@ -17,7 +17,7 @@
   <%= form_with scope: :order_has_meal, url: order_order_has_meals_path(session[:current_order_id]) do |form| %>
     <p>
       <%= form.label "Quantidade" %><br>
-      <%= form.number_field :quantity %>
+      <%= form.number_field :quantity, min: 0 %>
     </p>
 
     <%= form.hidden_field :meal_id, value: meal_id %>
