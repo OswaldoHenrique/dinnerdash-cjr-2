@@ -48,8 +48,8 @@
   </div>
 
   <%- if user_signed_in? %>
-    <p id="header2"> Seus pedidos anteriores </p>
-    <%= render current_user.orders.where.not(id: @order.id) %>
+    <p id="header2"> Pedidos anteriores mais recentes</p>
+    <%= render current_user.orders.where.not(id: @order.id).reverse.first(5) %>
   <% end %>
 </div>
 
