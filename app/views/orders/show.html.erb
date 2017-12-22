@@ -1,30 +1,53 @@
-<p>
-  <strong>ID:</strong>
-  <%= @order.id %>
-</p>
+<%= stylesheet_link_tag "home", media: "all", "data-turbolinks-track" => "reload" %>
 
-<p>
-  <strong>Status:</strong>
-  <%= @order.status %>
-</p>
+<div class="wrapper">
+  <br>
+  <%= link_to 'Home', home_index_path %>
+  <br>
+  <%= link_to 'Backoffice', backoffice_index_path %>
+  <br>
+  <%= link_to 'Categorias', meal_categories_path %>
+  <br>
+  <%= link_to 'Pedidos', orders_path %>
 
-<p>
-  <strong>$$$:</strong>
-  <%= @order.price %>
-</p>
-
-<h2>Meals</h2>
-<% @order.order_has_meals.each do |meal_order| %>
+  <h1>Pedido</h1>
   <p>
-    <strong>Meal | Order | Price | QTD</strong><br />
-    <%= Meal.find(meal_order.meal_id).name %>
-    <br>
-    <%= meal_order.order_id %>
-    <br>
-    <%= meal_order.price %>
-    <br>
-    <%= meal_order.quantity %>
+    <strong>ID:</strong>
+    <%= @order.id %>
   </p>
-<% end %>
 
-<%= link_to 'Back', orders_path %>
+  <p>
+    <strong>Situação:</strong>
+    <%= @order.status %>
+  </p>
+
+  <% if @order.status = 1 %>
+    <p>
+      <strong>ID do usuário:</strong>
+      <%= @order.user_id %>
+    </p>
+  <% end %>
+
+  <p>
+    <strong>Preço total:</strong>
+    <%= @order.price %>
+  </p>
+
+  <h2>Itens</h2>
+  <table>
+    <tr>
+      <th>Nome da refeição</th>
+      <th>ID da refeição</th>
+      <th>Quantidade</th>
+      <th>Preço</th>
+    </tr>
+    <% @order.order_has_meals.each do |meal_order| %>
+      <tr>
+        <td><%= Meal.find(meal_order.meal_id).name %></td>
+        <td><%= meal_order.meal_id %></td>
+        <td><%= meal_order.quantity %></td>
+        <td><%= meal_order.price %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

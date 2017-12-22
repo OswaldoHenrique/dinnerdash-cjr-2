@@ -26,10 +26,10 @@
     <%= cl_image_upload(:image, :crop => :fill, :width => 120, :height => 80) %>
   </p>
   <p>
-    <%= form.label :available %><br>
     <%= form.check_box :available %>
+    <%= form.label :available %>
   </p>
   <p id="ms">
-    <%= form.submit %>
+    <%= form.submit "Criar refeição" %>
   </p>
 <% end %>

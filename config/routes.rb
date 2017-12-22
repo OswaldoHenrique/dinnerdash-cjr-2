@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'backoffice/index'
+
   get 'home/index'
 
   devise_for :users, :controllers => {:registrations => "registrations"}

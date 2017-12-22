@@ -34,7 +34,7 @@
 
 .meal_params {
     display: block;
-    padding: 1vh 2vw;
+    padding: 3vh 2vw;
     border: 1px solid #3333;
     background-color: white;
     margin-right: 2vw;
@@ -61,17 +61,6 @@
 
 .order.items {
     display: inline-block;
-}
-
-.item {
-    display: inline-block;
-    float: left;
-    width: 25%;
-}
-
-.item p {
-    float: left;
-    margin: 1vh 5vw;
 }
 
 .order.footer {

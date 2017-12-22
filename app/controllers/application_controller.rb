@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
@@ -18,7 +19,7 @@ class ApplicationController < ActionController::Base
   before_action :finalize_order, if: -> {
     Order.find(session[:current_order_id]).status != 0
   }
-  after_action :current_order, if: -> {
+  around_action :current_order, if: -> {
     session[:current_order_id].nil?
   }
 
@@ -60,4 +61,18 @@ class ApplicationController < ActionController::Base
   def user_out
     session[:current_order_id] = nil
   end
+
+  def check_if_admin
+    if user_signed_in?
+      if current_user.admin
+      else
+        flash[:alert] = "Não é admin"
+        redirect_to home_index_path
+      end
+    else
+      flash[:alert] = "Não está logado"
+      redirect_to home_index_path
+    end
+  end
+
 end

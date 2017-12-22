@@ -3,7 +3,7 @@
 <div class="meal_category">
   <%- if !meal_category.meals.empty? %>
     <div class="meal">
-      <%= render meal_category.meals %>
+      <%= render meal_category.meals, not_render: false %>
     </div>
   <% else %>
     <p id="category_text"> Parece que não há nada aqui </p>

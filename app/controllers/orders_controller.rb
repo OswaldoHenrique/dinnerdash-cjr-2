@@ -28,7 +28,9 @@ class OrdersController < ApplicationController
     @order.status = 1
     @order.save
 
-    redirect_to @order
+    flash[:notice] = "Obrigado. Seu pedido foi recebido."
+
+    redirect_to home_index_path
   end
 
   private

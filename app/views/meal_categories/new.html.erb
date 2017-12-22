@@ -1,32 +1,41 @@
-<h1>Nova categoria</h1>
+<%= stylesheet_link_tag "home", media: "all", "data-turbolinks-track" => "reload" %>
 
-<%= form_with scope: :meal_category, url: meal_categories_path, local: true do |form| %>
+<div class="wrapper">
+  <br>
+  <%= link_to 'Backoffice', backoffice_index_path %>
+  <br>
+  <%= link_to 'Home', home_index_path %>
+  <br>
+  <%= link_to 'Categorias', meal_categories_path %>
+  <br>
+  <%= link_to 'Pedidos', orders_path %>
 
-  <% if @meal_category.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@meal_category.errors.count, "erro") %> proibiram
-        que essa categoria seja salva:
-      </h2>
-      <ul>
-        <% @meal_category.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
+  <h1>Nova categoria</h1>
+
+  <%= form_with scope: :meal_category, url: meal_categories_path, local: true do |form| %>
+
+    <% if @meal_category.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(@meal_category.errors.count, "erro") %> proibiram
+          que essa categoria seja salva:
+        </h2>
+        <ul>
+          <% @meal_category.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <p>
+      <%= form.label :name %><br>
+      <%= form.text_field :name %>
+    </p>
+
+    <p>
+      <%= form.submit "Criar categoria" %>
+    </p>
+
   <% end %>
-
-  <p>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  </p>
-
-  <p>
-    <%= form.submit %>
-  </p>
-
-<% end %>
-
-<%= link_to 'Home', home_index_path %>
-<br>
-<%= link_to 'Categorias', meal_categories_path %>
+</div>

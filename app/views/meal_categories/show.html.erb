@@ -1,18 +1,28 @@
-<p>
-  <strong>Nome:</strong>
-  <%= @meal_category.name %>
-</p>
+<%= stylesheet_link_tag "backoffice", media: "all", "data-turbolinks-track" => "reload" %>
 
-<%- if !@meal_category.meals.empty? %>
-  <p>---------------------------------------------<p>
-  <strong>Refeições</strong>
-  <%= render @meal_category.meals %>
-  <p>---------------------------------------------<p>
-<% end -%>
+<div class="wrapper">
+  <br>
+  <%= link_to 'Backoffice', backoffice_index_path %>
+  <br>
+  <%= link_to 'Home', home_index_path %>
+  <br>
+  <%= link_to 'Categorias', meal_categories_path %>
+  <br>
+  <%= link_to 'Pedidos', orders_path %>
 
-<strong>Adicionar refeição:</strong>
-<%= render 'meals/form' %>
+  <h1>
+    <%= @meal_category.name %>
+  </h1>
 
-<%= link_to 'Home', home_index_path %>
-<br>
-<%= link_to 'Categorias', meal_categories_path %>
+  <p>---------------------------------------------</p>
+  <strong>Adicionar refeição</strong>
+  <p>---------------------------------------------</p>
+  <%= render 'meals/form' %>
+
+  <%- if !@meal_category.meals.empty? %>
+    <p>---------------------------------------------</p>
+    <strong>Refeições existentes</strong>
+    <p>---------------------------------------------</p>
+    <%= render @meal_category.meals, not_render: true  %>
+  <% end -%>
+</div>

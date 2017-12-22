@@ -12,6 +12,11 @@
       <li>
         <%= link_to "perfil", edit_registration_path(:user) %><br />
       </li>
+      <%- if current_user.admin %>
+        <li>
+          <%= link_to "\"backoffice\"", backoffice_index_path %><br />
+        </li>
+      <% end -%>
     <% else %>
       <li>
         <%= link_to "cadastro", new_registration_path(:user) %><br />

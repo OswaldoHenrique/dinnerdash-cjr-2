@@ -1,4 +1,7 @@
 class MealCategoriesController < ApplicationController
+  before_action :authenticate_user!
+  before_action :check_if_admin
+
   def index
     @meal_categories = MealCategory.all
   end

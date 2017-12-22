@@ -52,3 +52,13 @@
     <%= render current_user.orders.where.not(id: @order.id).reverse.first(5) %>
   <% end %>
 </div>
+
+<br>
+<br>
+<br>
+<p>----------PROVISORIO----------</p>
+<%= link_to 'Criar categoria', new_meal_category_path %>
+<br>
+<%= link_to 'Categorias', meal_categories_path %>
+<br>
+<%= link_to 'Pratos', orders_path %>

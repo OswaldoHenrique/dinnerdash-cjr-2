@@ -1,4 +1,7 @@
 class MealsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :check_if_admin
+
   def create
     @meal_category = MealCategory.find(params[:meal_category_id])
     @meal = @meal_category.meals.create(meal_params)

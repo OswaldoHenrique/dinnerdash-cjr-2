@@ -10,6 +10,18 @@ header{
     z-index: 9;
 }
 
+header#backoffice{
+    position: relative;
+    min-height: 80vh;
+    width: 100%;
+    background-image: image-url("helloquence-61189.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    z-index: 9;
+}
+
 .logo {
     filter: none;
     font-family: 'Amaranth', sans-serif;

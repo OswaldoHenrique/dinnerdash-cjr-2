@@ -1,20 +1,27 @@
-<h1>Lista categorias</h1>
+<%= stylesheet_link_tag "home", media: "all", "data-turbolinks-track" => "reload" %>
 
-<table>
-  <tr>
-    <th>Nome</th>
-  </tr>
+<div class="wrapper">
+  <br>
+  <%= link_to 'Backoffice', backoffice_index_path %>
+  <br>
+  <%= link_to 'Home', home_index_path %>
+  <br>
+  <%= link_to 'Pedidos', orders_path %>
 
-  <% @meal_categories.each do |category| %>
+  <h1>Lista categorias</h1>
+
+  <table>
     <tr>
-      <td><%= category.name %></td>
-      <td><%= link_to 'Mostrar', meal_category_path(category) %></td>
+      <th>Nome</th>
     </tr>
-  <% end %>
-</table>
 
-<%= link_to 'Criar categoria', new_meal_category_path %>
-<br>
-<%= link_to 'Pratos', orders_path %>
-<br>
-<%= link_to 'Home', home_index_path %>
+    <% @meal_categories.each do |category| %>
+      <tr>
+        <td><%= category.name %></td>
+        <td><%= link_to 'Mostrar', meal_category_path(category) %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <%= link_to 'Criar categoria', new_meal_category_path %>
+</div>

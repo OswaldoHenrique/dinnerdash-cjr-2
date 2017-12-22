@@ -9,7 +9,7 @@ class OrderHasMealsController < ApplicationController
     attrs[:price] = (@meal.price*attrs[:quantity].to_f)
 
     @order_has_meal = @order.order_has_meals.create(attrs)
-    redirect_to order_path(@order)
+    redirect_to home_index_path
   end
 
   def update
@@ -21,7 +21,7 @@ class OrderHasMealsController < ApplicationController
     attrs[:price] = (@meal.price*attrs[:quantity].to_f)
 
     if @order_has_meal.update(attrs)
-      redirect_to Order.find(session[:current_order_id])
+      redirect_to home_index_path
     else
       render 'order_has_meals/form'
     end
