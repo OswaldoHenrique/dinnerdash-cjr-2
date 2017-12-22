@@ -35,7 +35,7 @@
       <%= form_with model: @order do |form| %>
         <%= form.hidden_field :status, value: 1 %>
         <p>
-          <%= form.submit %>
+          <%= form.submit "finalizar" %>
         </p>
       <% end %>
     <% else %>

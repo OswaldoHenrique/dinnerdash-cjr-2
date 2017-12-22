@@ -3,29 +3,27 @@
     url: order_order_has_meal_path(session[:current_order_id],
                                    OrderHasMeal.find_by(meal_id: meal_id, order_id: session[:current_order_id]).id) do |form| %>
     <p>
-      <%= meal_id %>
-      <%= form.label :quantity %><br>
+      <%= form.label "Quantidade" %><br>
       <%= form.number_field :quantity %>
     </p>
 
     <%= form.hidden_field :meal_id, value: meal_id %>
 
     <p id="ms">
-      <%= form.submit %>
+      <%= form.submit "atualizar" %>
     </p>
   <% end %>
 <% else %>
   <%= form_with scope: :order_has_meal, url: order_order_has_meals_path(session[:current_order_id]) do |form| %>
     <p>
-      <%= meal_id %>
-      <%= form.label :quantity %><br>
+      <%= form.label "Quantidade" %><br>
       <%= form.number_field :quantity %>
     </p>
 
     <%= form.hidden_field :meal_id, value: meal_id %>
 
     <p id="ms">
-      <%= form.submit %>
+      <%= form.submit "adicionar" %>
     </p>
   <% end %>
 <% end -%>

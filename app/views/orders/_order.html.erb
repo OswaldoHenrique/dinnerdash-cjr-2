@@ -14,16 +14,18 @@
   <%- if order.order_has_meals.any? %>
     <div class="order items">
       <% order.order_has_meals.each do |meal_order| %>
-        <p>
-          <br />
-          Nome: <%= Meal.find(meal_order.meal_id).name %>
-          <br>
-          Preço unitário: <%= Meal.find(meal_order.meal_id).price %>
-          <br>
-          Quantidade: <%= meal_order.quantity %>
-          <br>
-          Preço: <%= meal_order.price %>
-        </p>
+        <div class="item">
+          <p>
+            <br />
+            Nome: <%= Meal.find(meal_order.meal_id).name %>
+            <br>
+            Preço unitário: <%= Meal.find(meal_order.meal_id).price %>
+            <br>
+            Quantidade: <%= meal_order.quantity %>
+            <br>
+            Preço: <%= meal_order.price %>
+          </p>
+        </div>
       <% end %>
     </div>
   <% else %>
@@ -49,15 +51,17 @@
         <%= order.status %>
       </p>
       <p>
-        <span>Items pedidos:</span>
+        <span>Items:</span>
         <br />
-        <% order.order_has_meals.each do |meal_order| %>
-          <span>
-            <br />
-            <%= Meal.find(meal_order.meal_id).name %>
-            x<%= meal_order.quantity %>
-          </span>
-        <% end %>
+        <table>
+          <% order.order_has_meals.each do |meal_order| %>
+            <tr>
+              <td><%= Meal.find(meal_order.meal_id).name %>&nbsp;&nbsp;</td>
+              <td>x<%= meal_order.quantity %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td>R$<%= meal_order.price %></td>
+            </tr>
+          <% end %>
+        </table>
       </p>
       <p>
         <strong>Preço total:</strong>
