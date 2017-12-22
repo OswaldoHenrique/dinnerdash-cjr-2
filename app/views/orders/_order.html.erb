@@ -39,7 +39,7 @@
   </div>
 <% else %>
   <%- if order.id != session[:current_order_id]%>
-    <div class="order header">
+    <div class="order old">
       <p>
         <span>ID do pedido:</span>
         <%= order.id %>
