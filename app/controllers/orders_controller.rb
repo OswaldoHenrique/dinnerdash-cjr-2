@@ -25,7 +25,7 @@ class OrdersController < ApplicationController
 
   def update
     @order = Order.find(params[:id])
-    @order.status = params[:status]
+    @order.status = 1
     @order.save
 
     redirect_to @order

@@ -1,33 +1,62 @@
-<div class="order header">
-  <p id="header"> Seu pedido </p>
-  <p>
-    <span>ID do pedido:</span>
-    <%= order.id %>
-  </p>
-  <p>
-    <span>Situação:</span>
-    <%= order.status %>
-  </p>
-</div>
-
-<div class="order items">
-  <% order.order_has_meals.each do |meal_order| %>
+<%- if order.id == session[:current_order_id]%>
+  <div class="order header">
+    <p id="header"> Seu pedido </p>
     <p>
-      <br />
-      Nome: <%= Meal.find(meal_order.meal_id).name %>
-      <br>
-      Preço unitário: <%= Meal.find(meal_order.meal_id).price %>
-      <br>
-      Quantidade: <%= meal_order.quantity %>
-      <br>
-      Preço: <%= meal_order.price %>
+      <span>ID do pedido:</span>
+      <%= order.id %>
     </p>
-  <% end %>
-</div>
+    <p>
+      <span>Situação:</span>
+      <%= order.status %>
+    </p>
+  </div>
 
-<div class="order footer">
-  <p>
-    <strong>Preço total:</strong>
-    R$ <%= order.price %>
-  </p>
-</div>
+  <div class="order items">
+    <% order.order_has_meals.each do |meal_order| %>
+      <p>
+        <br />
+        Nome: <%= Meal.find(meal_order.meal_id).name %>
+        <br>
+        Preço unitário: <%= Meal.find(meal_order.meal_id).price %>
+        <br>
+        Quantidade: <%= meal_order.quantity %>
+        <br>
+        Preço: <%= meal_order.price %>
+      </p>
+    <% end %>
+  </div>
+
+  <div class="order footer">
+    <p>
+      <strong>Preço total:</strong>
+      R$ <%= order.price %>
+    </p>
+  </div>
+<% else %>
+  <%- if order.id != session[:current_order_id]%>
+    <div class="order header">
+      <p>
+        <span>ID do pedido:</span>
+        <%= order.id %>
+      </p>
+      <p>
+        <span>Situação:</span>
+        <%= order.status %>
+      </p>
+      <p>
+        <span>Items pedidos:</span>
+        <% order.order_has_meals.each do |meal_order| %>
+          <p>
+            <br />
+            Nome: <%= Meal.find(meal_order.meal_id).name %>
+            x<%= meal_order.quantity %>
+          </p>
+        <% end %>
+      </p>
+      <p>
+        <strong>Preço total:</strong>
+        R$ <%= order.price %>
+      </p>
+    </div>
+  <% end -%>
+<% end -%>

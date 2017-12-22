@@ -9,10 +9,14 @@
     margin: 3vh 0;
 }
 
-#category_header, #header {
+#category_header, #header, #header2 {
     color: #333333;
     font-size: 28px;
     opacity: 0.75;
+}
+
+#header2 {
+    margin-top: 10vh;
 }
 
 .meal {
@@ -32,6 +36,7 @@
     display: block;
     padding: 1vh 2vw;
     border: 1px solid #3333;
+    background-color: white;
     margin-right: 2vw;
 }
 
@@ -40,7 +45,9 @@
 }
 
 .order.header {
+    padding-top: 3vh;
     border-bottom: 1px solid #3333;
+    border-top: 1px solid #3333;
 }
 
 .order.footer {
@@ -48,4 +55,52 @@
     padding-bottom: 1vh;
     border-bottom: 1px solid #3333;
     border-top: 1px solid #3333;
+}
+
+p#ms input {
+    color: white;
+    background-color: ForestGreen;
+    border-color: ForestGreen;
+    border-radius: 5%;
+    padding: 0;
+    margin: 1vh 0;
+    width: 100%;
+    height: 2em;
+}
+
+.fs form p input {
+    color: white;
+    background-color: ForestGreen;
+    border-color: ForestGreen;
+    border-radius: 5%;
+    padding: 0;
+    margin: 1vh 0;
+    width: 30%;
+    height: 2em;
+}
+
+.links {
+    padding-top: 5vh;
+}
+
+.links h6{
+    margin-bottom: 1em;
+    color: #333333;
+    opacity: 0.75;
+    font-size: 16px;
+}
+
+.links a:link, .links a:visited {
+    display: inline-flex;
+    justify-content: center;
+    color: ForestGreen;
+    border: 2px solid ForestGreen;
+    border-radius: 5%;
+    width: 30%;
+    margin-bottom: 1em;
+    padding: 0.25em 0;
+}
+
+.links a:hover {
+    text-decoration: none;
 }

@@ -23,26 +23,35 @@
   <% end -%>
 </header>
 
-<% flash.each do |name, msg| %>
-  <%= content_tag :div, msg, :id => "flash" if msg.length > 0 %>
-<% end %>
-
 <div class="wrapper">
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, :id => "flash" if msg.length > 0 %>
+  <% end %>
+
   <%= render @meal_categories %>
   <%= render @order %>
-</div>
+  <div class="fs">
+    <%- if user_signed_in? %>
+      <%= form_with model: @order do |form| %>
+        <%= form.hidden_field :status, value: 1 %>
+        <p>
+          <%= form.submit %>
+        </p>
+      <% end %>
+    <% else %>
+      <span> Você precisa estar logado para finalizar o pedido</span>
+      <div class="links">
+        <%= link_to 'Entrar', new_session_path(:user) %>
+        <%= link_to 'Criar conta', new_registration_path(:user) %>
+      </div>
+    <% end -%>
+  </div>
 
-<%- if user_signed_in? %>
-  <%= form_with model: @order do |form| %>
-    <%= form.hidden_field :status, value: 1 %>
-    <p>
-      <%= form.submit %>
-    </p>
+  <%- if user_signed_in? %>
+    <p id="header2"> Seus pedidos anteriores </p>
+    <%= render current_user.orders.where.not(id: @order.id) %>
   <% end %>
-<% else %>
-  <%= link_to 'Entrar', new_session_path(:user) %>
-  <%= link_to 'Criar conta', new_registration_path(:user) %>
-<% end -%>
+</div>
 
 <br>
 <br>

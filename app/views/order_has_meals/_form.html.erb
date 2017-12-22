@@ -10,7 +10,7 @@
 
     <%= form.hidden_field :meal_id, value: meal_id %>
 
-    <p>
+    <p id="ms">
       <%= form.submit %>
     </p>
   <% end %>
@@ -20,12 +20,12 @@
       <%= meal_id %>
       <%= form.label :quantity %><br>
       <%= form.number_field :quantity %>
-  </p>
+    </p>
 
-  <%= form.hidden_field :meal_id, value: meal_id %>
+    <%= form.hidden_field :meal_id, value: meal_id %>
 
-  <p>
-    <%= form.submit %>
-  </p>
+    <p id="ms">
+      <%= form.submit %>
+    </p>
   <% end %>
 <% end -%>
